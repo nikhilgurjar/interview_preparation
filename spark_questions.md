@@ -36,3 +36,29 @@ References:
       - **Data Sources**: Spark can easily integrate with various data sources like HDFS, NoSQL databases, relational databases, and data warehouses. It also supports a variety of file formats like CSV, JSON, Parquet, and others.
       
       - **Machine Learning and Graph Processing**: Spark includes MLlib for machine learning and GraphX for graph processing, making it a versatile tool for a wide range of use cases.
+
+Apache Spark provides three ways to manipulate data: SQL, DataFrames, and Datasets. Regardless of the method you choose, your code goes through the Catalyst Optimizer, which is essentially the Spark SQL engine. This engine transforms your code into Java bytecode, which can be executed on the JVM.
+
+The Spark SQL engine operates in four phases:
+
+1. **Analysis**: In this phase, Spark verifies the syntax of your code and checks if the tables and columns you're referring to actually exist. If there's an issue, it throws an AnalysisException. This process involves converting an unresolved logical plan (which might have unknown attributes) into a resolved logical plan.
+
+2. **Logical Planning**: The engine generates a logical plan for the query. This plan represents a series of transformations that produce the result, but it doesn't specify how to perform those transformations.
+
+3. **Physical Planning**: The logical plan is converted into one or more physical plans. These plans describe how to execute the query on the cluster. The engine chooses the most efficient plan based on cost estimation.
+
+4. **Code Generation**: The chosen physical plan is then compiled into Java bytecode to run on the JVM.
+
+The Resilient Distributed Dataset (RDD) is a fundamental data structure of Spark. It's an immutable distributed collection of objects. Each dataset in an RDD is divided into logical partitions, which may be computed on different nodes of the cluster.
+
+The term "Resilient" means that RDDs can recover from node failures. "Distributed" means that data is distributed across multiple nodes in a cluster. "Dataset" is your actual data.
+
+RDDs support two types of operations: transformations, which create a new RDD from an existing one, and actions, which return a value to the driver program after running a computation on the dataset.
+
+The main disadvantage of RDDs is that they don't take advantage of Spark's optimization. This is because when you're working with RDDs, you're working with the data at a low level.
+
+On the other hand, RDDs are great for unstructured data and give you more control when you need to perform complex, low-level transformations and actions.
+
+DataFrames, on the other hand, are designed for processing large collections of structured or semi-structured data. They're easier to use than RDDs and offer better optimization for queries.
+
+In summary, while RDDs provide a powerful and flexible API, they're often harder to work with and lack the optimizations provided by DataFrames and Datasets. Therefore, it's generally recommended to use DataFrames and Datasets for big data processing tasks.
