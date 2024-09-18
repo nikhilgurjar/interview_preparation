@@ -62,3 +62,28 @@ On the other hand, RDDs are great for unstructured data and give you more contro
 DataFrames, on the other hand, are designed for processing large collections of structured or semi-structured data. They're easier to use than RDDs and offer better optimization for queries.
 
 In summary, while RDDs provide a powerful and flexible API, they're often harder to work with and lack the optimizations provided by DataFrames and Datasets. Therefore, it's generally recommended to use DataFrames and Datasets for big data processing tasks.
+
+
+**Difference b/w cache and persist**:
+
+         `df.cache()` and `df.persist()` are methods in PySpark used to persist the DataFrame in memory and speed up subsequent computations. 
+         
+         - `df.cache()`: This method is a shorthand for `df.persist(StorageLevel.MEMORY_AND_DISK)`. It persists the DataFrame with a default storage level (MEMORY_AND_DISK). This means that the DataFrame will be stored in memory if there is enough space, and will spill to disk if the memory is full.
+         
+         - `df.persist()`: This method is more flexible as it allows you to specify a custom storage level. You can choose to persist the data in serialized form, on disk only, on memory only, or a combination of these.
+         
+         Storage levels in PySpark:
+         
+         - MEMORY_ONLY: Store the data in deserialized form in JVM memory. If the size of data is bigger than the memory capacity, it will not store the excess data and recompute it every time it's needed. This level provides the fastest data access but can be memory-consuming.
+         
+         - MEMORY_AND_DISK: Store the data in deserialized form in JVM memory. If the size of data is bigger than the memory capacity, it will store the excess data on disk. This level provides a good balance between memory utilization and computation speed.
+         
+         - MEMORY_ONLY_SER (Memory Only Serialized): Similar to MEMORY_ONLY, but the data is stored in serialized form. This level is more space-efficient than MEMORY_ONLY but requires more CPU time because data needs to be deserialized before computation.
+         
+         - MEMORY_AND_DISK_SER (Memory and Disk Serialized): Similar to MEMORY_AND_DISK, but the data is stored in serialized form. This level is more space-efficient than MEMORY_AND_DISK but requires more CPU time because data needs to be deserialized before computation.
+         
+         - DISK_ONLY: Store all the data on disk. This level is the slowest but it's the most space-efficient.
+         
+         When you use `.show()`, it only shows the first few rows of the DataFrame, not just one partition. The number of rows displayed can be specified as an argument to the `show()` function.
+         
+         Remember, choosing the right storage level depends on your specific use case, the size of your data, and the resources available in your cluster.
