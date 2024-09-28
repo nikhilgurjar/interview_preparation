@@ -1,6 +1,6 @@
 References:
 - https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations
-
+- https://www.linkedin.com/posts/surbhi-walecha_data-engineering-interview-question-ugcPost-7242756667094773760-jERn?utm_source=share&utm_medium=member_desktop
 
 1. **What is AQE**  
    Adaptive Query Execution (AQE) is a feature introduced in Apache Spark 3.0 that optimizes Spark SQL queries dynamically at runtime. AQE performs three main optimizations:  
@@ -87,3 +87,13 @@ In summary, while RDDs provide a powerful and flexible API, they're often harder
          When you use `.show()`, it only shows the first few rows of the DataFrame, not just one partition. The number of rows displayed can be specified as an argument to the `show()` function.
          
          Remember, choosing the right storage level depends on your specific use case, the size of your data, and the resources available in your cluster.
+
+Q -> What is Z ordering
+Q -> difference between azure blob storage and adls gen2 storage 
+Q -> What is the difference between map and flatMap transformations? Provide use cases for each.
+Q -> How do you implement a custom partitioner in PySpark, and what are the use cases?
+Q -> What are accumulators and broadcast variables? How and when would you use them?
+Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
+Q -> Difference between Datamart, Datawarehouse and Deltalake
+Q -> Compare performance of Managed and External Table
+Q -> 
