@@ -126,9 +126,18 @@ Q -> What is Z ordering
    your map function results in creating multi layered structures 
    but all you want is a simple - flat - one dimensional structure, by removing ALL the internal groupings <br/>
    
+### How do you implement a custom partitioner in PySpark, and what are the use cases?
+   There are 3 type of partitioners in pyspark
+    1.  Hash partitioning - It works by assigning a unique hash value to each record based on a specified column and then placing the record in the corresponding partition.
+    2. Range Partitioning - repartitionByRange() df = df.repartitionByRange(3, "age") 
+    3. Using partitionBy -> partitionBy
 
-Q -> How do you implement a custom partitioner in PySpark, and what are the use cases?
-Q -> What are accumulators and broadcast variables? How and when would you use them?
+### What are accumulators and broadcast variables? How and when would you use them?
+   Broadcast Variables - Instead of sending these variables with every task, Spark distributes them to each executor only once, thus reducing overhead.
+   Accumulators - Accumulators are variables used for aggregating information across all tasks in a Spark job. They provide a way to update a shared variable across tasks in parallel while providing only limited forms of communication and synchronization.
+   Accumulators should be used in parallel processing as many parallel task will try to update accumulator which can lead to data corruption. 
+   see code
+
 Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
 Q -> Difference between Datamart, Datawarehouse and Deltalake
 Q -> Compare performance of Managed and External Table
