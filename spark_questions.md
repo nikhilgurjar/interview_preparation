@@ -127,16 +127,51 @@ Q -> What is Z ordering
    but all you want is a simple - flat - one dimensional structure, by removing ALL the internal groupings <br/>
    
 ### How do you implement a custom partitioner in PySpark, and what are the use cases?
-   There are 3 type of partitioners in pyspark
-    1.  Hash partitioning - It works by assigning a unique hash value to each record based on a specified column and then placing the record in the corresponding partition.
-    2. Range Partitioning - repartitionByRange() df = df.repartitionByRange(3, "age") 
-    3. Using partitionBy -> partitionBy
+
+#### Types of Partitions in PySpark
+1. **Hash Partitioning**: 
+   - Assigns a unique hash value to each record based on a specified column and places the record in the corresponding partition.
+   - **Use Case**: Useful when you need to evenly distribute data across partitions based on a key.
+
+2. **Range Partitioning**:
+   - Uses `repartitionByRange()`. Example: `df = df.repartitionByRange(3, "age")`
+   - **Use Case**: Ideal for range queries where data is partitioned based on a range of values.
+
+3. **Custom Partitioner using `partitionBy`**:
+   - You can create a custom partitioner by extending `pyspark.Partitioner` and implementing your partitioning logic.
+   - **Use Case**: When you need a specific partitioning strategy that is not covered by default partitioners.
+
+### Can you explain a scenario where hash partitioning might not be ideal?
+Hash partitioning might not be ideal in scenarios where:
+- **Skewed Data Distribution**: If the data is not uniformly distributed, hash partitioning can lead to some partitions being overloaded while others are underutilized. This can cause performance bottlenecks.
+- **Range Queries**: For queries that need to access a range of values, hash partitioning is inefficient because it scatters related data across multiple partitions, leading to increased read times.
+
+### How does range partitioning improve query performance for range-based queries?
+Range partitioning improves query performance for range-based queries by:
+- **Localized Data Access**: It organizes data into contiguous ranges, so queries that access a specific range of values can quickly locate and retrieve the relevant data.
+- **Reduced I/O**: Since related data is stored together, fewer partitions need to be scanned, reducing the amount of I/O operations and improving query speed.
+- **Efficient Indexing**: Range partitioning allows for more efficient indexing and searching within each partition, further speeding up range-based queries.
 
 ### What are accumulators and broadcast variables? How and when would you use them?
-   Broadcast Variables - Instead of sending these variables with every task, Spark distributes them to each executor only once, thus reducing overhead.
-   Accumulators - Accumulators are variables used for aggregating information across all tasks in a Spark job. They provide a way to update a shared variable across tasks in parallel while providing only limited forms of communication and synchronization.
-   Accumulators should be used in parallel processing as many parallel task will try to update accumulator which can lead to data corruption. 
-   see code
+   - **Broadcast Variables - Instead of sending these variables with every task, Spark distributes them to each executor only once, thus reducing overhead. 
+   - **Accumulators - Accumulators are variables used for aggregating information across all tasks in a Spark job. They provide a way to update a shared variable across tasks in parallel while providing only limited forms of communication and synchronization. 
+   - Accumulators should be used in parallel processing as many parallel task will try to update accumulator which can lead to data corruption. 
+   see code for it
+   
+### What are the potential pitfalls of using accumulators in a distributed environment?
+The potential pitfalls of using accumulators include:
+- **Data Corruption**: If multiple tasks try to update the accumulator simultaneously, it can lead to inconsistent or corrupted data.
+- **Limited Communication**: Accumulators provide limited forms of communication and synchronization, which can be a drawback if more complex coordination is needed.
+- **Delayed Updates**: The updates to accumulators are not immediately visible to the driver program, which can lead to delays in reflecting the current state of the accumulated value.
+
+### How do broadcast variables help in reducing the communication overhead in a Spark job?
+Broadcast variables help reduce communication overhead by:
+- **Single Distribution**: Instead of sending the variable with every task, Spark distributes the broadcast variable to each executor only once. This reduces the amount of data transferred over the network.
+- **Efficient Access**: Executors can access the broadcast variable locally, which speeds up task execution and reduces latency.
+- **Consistency**: Broadcast variables ensure that all tasks use the same read-only data, maintaining consistency across the distributed environment.
+
+
+
 
 Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
 Q -> Difference between Datamart, Datawarehouse and Deltalake
