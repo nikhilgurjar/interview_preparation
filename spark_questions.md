@@ -109,11 +109,24 @@ Q -> What is Z ordering
 - **Hierarchical namespaces** in ADLS Gen2 organize blob data into directories and store metadata about each directory and the files within it. This organization yields better storage and retrieval performance for analytical use cases and lowers the cost of analysis. Operations such as directory renames and deletes can be performed in a single atomic operation.
 - **Flat namespaces** in Blob Storage require several operations proportionate to the number of objects in the structure.
 
+**Cost-
+ -** Blob: High cost for Analysis.
+ - **ADLS: Low cost for Analysis.
 
-Cost
-Blob: High cost for Analysis.
-ADLS: Low cost for Analysis.
-Q -> What is the difference between map and flatMap transformations? Provide use cases for each.
+### What is the difference between map and flatMap transformations? Provide use cases for each?
+   val array1d = Array ("1,2,3", "4,5,6", "7,8,9")   <br/>
+   //array1d is an array of strings <br/>
+   
+   val array2d = array1d.map(x => x.split(",")) <br/>
+   //array2d will be : Array( Array(1,2,3), Array(4,5,6), Array(7,8,9) ) <br/>
+   
+   val flatArray = array1d.flatMap(x => x.split(",")) <br/>
+   //flatArray will be : Array (1,2,3,4,5,6,7,8,9) <br/>
+   You want to use a flatMap when,
+   your map function results in creating multi layered structures 
+   but all you want is a simple - flat - one dimensional structure, by removing ALL the internal groupings <br/>
+   
+
 Q -> How do you implement a custom partitioner in PySpark, and what are the use cases?
 Q -> What are accumulators and broadcast variables? How and when would you use them?
 Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
