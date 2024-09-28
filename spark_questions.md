@@ -171,9 +171,12 @@ Broadcast variables help reduce communication overhead by:
 - **Consistency**: Broadcast variables ensure that all tasks use the same read-only data, maintaining consistency across the distributed environment.
 
 
+### Difference between Datamart, Datawarehouse and Deltalake
+![image](https://github.com/user-attachments/assets/1d4d36ed-db01-4552-8d8d-4bc19e680772)
+need video
 
 
 Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
-Q -> Difference between Datamart, Datawarehouse and Deltalake
+Q -> 
 Q -> Compare performance of Managed and External Table
 Q -> 
