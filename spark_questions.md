@@ -89,7 +89,30 @@ In summary, while RDDs provide a powerful and flexible API, they're often harder
          Remember, choosing the right storage level depends on your specific use case, the size of your data, and the resources available in your cluster.
 
 Q -> What is Z ordering
-Q -> difference between azure blob storage and adls gen2 storage 
+### What is the difference between Azure Blob Storage and ADLS Gen2 Storage?
+
+**ADLS Gen2 = Azure Blob Storage + ADLS Gen1**
+
+#### Structure
+- **Blob Storage**: Flat namespace object store.
+- **ADLS Gen2**: Hierarchical namespaces (much like a File System).
+
+#### Purpose
+- **Blob Storage**: General purpose object store for a wide variety of storage scenarios, including big data analytics.
+- **ADLS Gen2**: Optimized storage for big data analytics workloads.
+
+#### Performance (Analytics Workload)
+- **Blob Storage**: Good storage retrieval performance.
+- **ADLS Gen2**: Better storage retrieval performance.
+
+**Explanation**:
+- **Hierarchical namespaces** in ADLS Gen2 organize blob data into directories and store metadata about each directory and the files within it. This organization yields better storage and retrieval performance for analytical use cases and lowers the cost of analysis. Operations such as directory renames and deletes can be performed in a single atomic operation.
+- **Flat namespaces** in Blob Storage require several operations proportionate to the number of objects in the structure.
+
+
+Cost
+Blob: High cost for Analysis.
+ADLS: Low cost for Analysis.
 Q -> What is the difference between map and flatMap transformations? Provide use cases for each.
 Q -> How do you implement a custom partitioner in PySpark, and what are the use cases?
 Q -> What are accumulators and broadcast variables? How and when would you use them?
