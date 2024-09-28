@@ -175,6 +175,8 @@ Broadcast variables help reduce communication overhead by:
 ![image](https://github.com/user-attachments/assets/1d4d36ed-db01-4552-8d8d-4bc19e680772)
 need video
 
+Q -> bucketing vs partioning 
+Q -> what is liquid clustering
 
 Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
 Q -> 
