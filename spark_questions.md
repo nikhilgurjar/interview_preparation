@@ -88,7 +88,12 @@ In summary, while RDDs provide a powerful and flexible API, they're often harder
          
          Remember, choosing the right storage level depends on your specific use case, the size of your data, and the resources available in your cluster.
 
-Q -> What is Z ordering
+### What is the difference between Azure Blob Storage and ADLS Gen2 Storage?
+   z ordering is used to optimize range queries involving multi dimensions. Example, in a railway passenger data lets say, if you zorder by train number and boarding location, it will try to colocate rows with train number and boarding locationions in a same path. 
+   repartition by range however runs on multiple columns but sorts on 1 column only. 
+z order tries to remove overlap of given columns. 
+you can run Deltalake.forpath().executeZorder()
+
 ### What is the difference between Azure Blob Storage and ADLS Gen2 Storage?
 
 **ADLS Gen2 = Azure Blob Storage + ADLS Gen1**
