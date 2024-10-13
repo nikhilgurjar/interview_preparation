@@ -1,5 +1,18 @@
-1. UnionAll vs Union
-   Union is slow as it only provides distinct elements and union all is fast because it gives duplicates as well.
-   Select requester_id from RequestAccepted
-   Union all
-   Select accepter_id from RequestAccepted
+### Questions and Answers
+
+#### 1. What is the difference between `UNION ALL` and `UNION`?
+- **`UNION`**: This operation combines the results of two queries and removes duplicate rows. It is slower because it performs a distinct operation to eliminate duplicates.
+- **`UNION ALL`**: This operation combines the results of two queries and includes all duplicates. It is faster because it does not perform the distinct operation.
+
+Example:
+```sql
+SELECT requester_id FROM RequestAccepted
+UNION ALL
+SELECT accepter_id FROM RequestAccepted;
+```
+
+
+#### 2. Explain behaviour of order in different windows?
+- you can use window functions without partition by
+- but when you use order by it takes rows between RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+- Note that some window functions such as LAG, LEAD, ROW_NUMBER and RANK operate on the entire partition (by design) and behave differently.
