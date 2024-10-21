@@ -12,6 +12,9 @@ References:
 ### Optimizations technichques in hive? what is bucketing, clustering?
 ### When to you row based file format and when to use column based file format?
 ### Where we should use partitioning and where to use bucketing?
+### What config you used for your hardest project?
+### What is liquid clustering?
+### Hardest thing you faced and how did you resolved?
 ### 
 
 
