@@ -2,6 +2,21 @@ References:
 - https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations
 - https://www.linkedin.com/posts/surbhi-walecha_data-engineering-interview-question-ugcPost-7242756667094773760-jERn?utm_source=share&utm_medium=member_desktop
 
+### What is apache spark?
+### What are best optimization techniques for apache spark?
+### Difference between apache spark and map reduce?
+### what are spark lazy operations and which trigger operations?
+### Diamond problem in java and spark? (inheritance problem) and how does it scala helps us to rectify it?
+### Yield keyword in scala
+### Optimizations technichques in hive? what are they?
+### Optimizations technichques in hive? what is bucketing, clustering?
+### When to you row based file format and when to use column based file format?
+### Where we should use partitioning and where to use bucketing?
+### 
+
+
+
+
 1. **What is AQE**  
    Adaptive Query Execution (AQE) is a feature introduced in Apache Spark 3.0 that optimizes Spark SQL queries dynamically at runtime. AQE performs three main optimizations:  
    1. Coalescing Shuffle Partitions: AQE can combine small partitions during a shuffle to reduce the overhead of scheduling and executing many small tasks. For example, if a DataFrame with 250MB of data is shuffled into 200 partitions, but only 5 partitions are filled with data, AQE can coalesce these 5 partitions into fewer partitions to ensure all tasks complete at the same time.
