@@ -3,7 +3,9 @@ References:
 - https://www.linkedin.com/posts/surbhi-walecha_data-engineering-interview-question-ugcPost-7242756667094773760-jERn?utm_source=share&utm_medium=member_desktop
 
 ### What is apache spark?
+Apache Spark is an open-source, distributed processing system used for big data workloads. It utilizes in-memory caching, and optimized query execution for fast analytic queries against data of any size. It provides development APIs in Java, Scala, Python and R, and supports code reuse across multiple workloads—batch processing, interactive queries, real-time analytics, machine learning, and graph processing.
 ### What are best optimization techniques for apache spark?
+
 ### Difference between apache spark and map reduce?
 ### what are spark lazy operations and which trigger operations?
 ### Diamond problem in java and spark? (inheritance problem) and how does it scala helps us to rectify it?
