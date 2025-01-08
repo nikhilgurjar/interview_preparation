@@ -20,3 +20,4 @@ SELECT accepter_id FROM RequestAccepted;
 ### how to calculate rolling averages efficiently
 use window function along with rows between 2 preceding and current row
 https://stackoverflow.com/questions/56063397/how-to-understand-the-results-of-rows-between-2-preceding-and-current-row
+https://www.linkedin.com/pulse/understanding-rows-between-clause-sql-rahma-hassan/
