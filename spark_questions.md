@@ -206,6 +206,7 @@ Broadcast variables help reduce communication overhead by:
 need video
 
 Q -> bucketing vs partioning 
+https://medium.com/@ashwin_kumar_/spark-partitioning-vs-bucketing-partitionby-vs-bucketby-09c98c5b40eb
 Q -> what is liquid clustering
 Liquid Clustering ( abbreviated as LC in this article) automatically adjusts the data layout based on clustering keys. In contrast to a fixed data layout as in Hive-style partitioning, the flexible (“liquid”) layout dynamically adjusts to changing query patterns, addressing the problem of suboptimal partitioning, column cardinality, etc. Clustering columns can be changed without rewriting the data.
 
