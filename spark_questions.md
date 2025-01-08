@@ -21,7 +21,11 @@ Apache Spark is an open-source, distributed processing system used for big data 
 
 
 ### Sparksession vs sparkcontext vs hivecontext vs sqlcontext?
-https://medium.com/@rganesh0203/sparkcontext-vs-othercontexts-98e54895197e#:~:text=SparkContext%3A%20The%20core%20Spark%20context,SQLContext%20%2C%20HiveContext%20%2C%20and%20SparkContext%20.
+https://medium.com/@rganesh0203/sparkcontext-vs-othercontexts-98e54895197e
+<code>
+   SparkSession.builder().appName("test_app").master("local").config("spark.sql.warehouse.dir", "C:/users/nikhil/spark").enableHiveSupport().getOrCreate()
+   
+</code>
 
 1. **What is AQE**  
    Adaptive Query Execution (AQE) is a feature introduced in Apache Spark 3.0 that optimizes Spark SQL queries dynamically at runtime. AQE performs three main optimizations:  
