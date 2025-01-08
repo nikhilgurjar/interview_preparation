@@ -207,8 +207,13 @@ need video
 
 Q -> bucketing vs partioning 
 Q -> what is liquid clustering
+Liquid Clustering ( abbreviated as LC in this article) automatically adjusts the data layout based on clustering keys. In contrast to a fixed data layout as in Hive-style partitioning, the flexible (“liquid”) layout dynamically adjusts to changing query patterns, addressing the problem of suboptimal partitioning, column cardinality, etc. Clustering columns can be changed without rewriting the data.
 
 Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
 Q -> 
 Q -> Compare performance of Managed and External Table
 Q -> 
+
+### Notes on z ordering
+https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc251d7870
+
