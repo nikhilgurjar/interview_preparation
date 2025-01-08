@@ -7,8 +7,13 @@ Apache Spark is an open-source, distributed processing system used for big data 
 ### What are best optimization techniques for apache spark?
 
 ### Difference between apache spark and map reduce?
+https://arismuhandisin.medium.com/mapreduce-vs-spark-choosing-the-right-framework-for-your-big-data-needs-2b01e3a51dcd
 ### what are spark lazy operations and which trigger operations?
+https://medium.com/@john_tringham/spark-concepts-simplified-lazy-evaluation-d398891e0568
+https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations
+
 ### Diamond problem in java and spark? (inheritance problem) and how does it scala helps us to rectify it?
+https://medium.com/@shrutibce/diamond-problem-solution-in-scala-b9af7f54a32b
 ### Yield keyword in scala
 ### Optimizations technichques in hive? what are they?
 ### Optimizations technichques in hive? what is bucketing, clustering?
@@ -17,8 +22,6 @@ Apache Spark is an open-source, distributed processing system used for big data 
 ### What config you used for your hardest project?
 ### What is liquid clustering?
 ### Hardest thing you faced and how did you resolved?
-### 
-
 
 ### Sparksession vs sparkcontext vs hivecontext vs sqlcontext?
 https://medium.com/@rganesh0203/sparkcontext-vs-othercontexts-98e54895197e
