@@ -16,3 +16,7 @@ SELECT accepter_id FROM RequestAccepted;
 - you can use window functions without partition by
 - but when you use order by it takes rows between RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
 - Note that some window functions such as LAG, LEAD, ROW_NUMBER and RANK operate on the entire partition (by design) and behave differently.
+
+### how to calculate rolling averages efficiently
+use window function along with rows between 2 preceding and current row
+https://stackoverflow.com/questions/56063397/how-to-understand-the-results-of-rows-between-2-preceding-and-current-row
