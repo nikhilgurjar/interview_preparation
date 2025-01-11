@@ -24,3 +24,5 @@ https://www.linkedin.com/pulse/understanding-rows-between-clause-sql-rahma-hassa
 
 ### sql query to concate text in two rows
 ### sql query to find all tables which has a particular column in it
+### explain sql normalization, its forms from 1 to 5 and how to violet each 
+# write query to convert string to int data type
