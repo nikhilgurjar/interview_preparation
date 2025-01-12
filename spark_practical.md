@@ -18,4 +18,11 @@
                                          df3 = df.subtract(df2)
 14. from a dataframe save same datatype columns into different different datafrmae
 15. given a transaction table(userid, transactiontype, amount) and user table(userid, amount, minAmount). Find all users who gone below their minAmount
-16. 
+16. Create a RDD using scc parallize and other methods
+17. write a window function and find last trnsaction of a account number
+18. create accumulators and broadcast variables and pass it off
+19. Write a Spark code snippet to count the number of occurrences of each word in a text file.
+20. Write a Spark code snippet to calculate the average value of a numeric column in a DataFrame.
+21. Write a Spark code snippet to implement collaborative filtering for recommendation systems.
+22. 
+
