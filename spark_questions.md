@@ -222,4 +222,12 @@ Q ->
 https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc251d7870
 
 ### If Spark can spill the data to disk, why would it fail with the OOM – out-of-memory exception?
-
+### Spark serialization and deserialization
+   we do transformations and actions on rdd and datasets
+   Now transformations are naroow and wide
+   in wide transformation there is shuffling between partitions and hence between nodes
+   and it can't be trasferred without serialization as internally everything is JVM objects
+   serialization is process of converting java object to stream of bytes to transfer over network
+   type of serialization 
+- java serialization - default 
+- kyro serialization - 10x faster than java serializer and is more performant however do not support for all types 
