@@ -221,3 +221,5 @@ Q ->
 ### Notes on z ordering
 https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc251d7870
 
+### If Spark can spill the data to disk, why would it fail with the OOM – out-of-memory exception?
+
