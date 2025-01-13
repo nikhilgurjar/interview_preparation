@@ -230,4 +230,17 @@ https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc
    serialization is process of converting java object to stream of bytes to transfer over network
    type of serialization 
 - java serialization - default 
-- kyro serialization - 10x faster than java serializer and is more performant however do not support for all types 
+- kyro serialization - 10x faster than java serializer and is more performant however do not support for all types
+
+
+  9) How do you connect ADLS Gen 2 with databricks? In where we mention the role assignments?
+10) If you are using Service Principal to connect with ADLS from Azure Databricks explain the steps and how would you code it?
+11) Why using service principal? How would you create it?
+12) What is Databricks runtime? Why we need it?
+13) What are Workflows?
+14) Explain about the Medallion Architecture in brief.
+15) Explain about Delta file format briefly.
+16) Consider you are working in Facebook. User is writing data for each record. Since each record is been written, a new json transaction log will get created for each write. But we can use Datalake only right. Why do we require delta file format? It can decrease the performance every now and then right?
+17) Consider a job is running very slow in Azure Databricks. How would you approach the issue and make it faster?
+18) What are the optimization techniques you have worked on? Explain them in brief.
+19) How would you optimize the job with respect to memory management in azure databricks?
