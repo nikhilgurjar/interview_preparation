@@ -1,4 +1,5 @@
 https://www.linkedin.com/posts/agathamudi-leela-vara-prasad_pyspark-practice-notes-activity-7267058247516188672-Odn2/
+https://www.linkedin.com/posts/seikhsariful_adf-activity-7278713400321323009-5UkC?utm_source=share&utm_medium=member_desktop (go fast)
 1. Write code to fetch data from oracle db
 2. How to handle multi delimiters
    way1 -> explod(split(df.marks, "\\|"))
