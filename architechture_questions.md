@@ -62,6 +62,10 @@ Natural key has business associated with it it can be primary key as well it can
 natural key will be larger in size and may create memory issues
 surrogate key is factless key which do not change if there is any change in data
 
-
+### Type of facts in ETL
+1. additive 2. non additive 3. semi additive
+   additive means you can add over all dimensions like gross revenue you can sum along any axis be it monthly, quaterly, over all products, over all subsiduries
+   semi additive means you can only sum acorss some dimensions like account balance, can sum alongs accounts but not along time
+   non additive means gross percentage revenue, can't sum as you don't know what is base value and hence it is told to not use percentage and all that info in facts. 
 
   
