@@ -72,3 +72,36 @@ lets come to tasks first, that depends on number of partitions, 100*1024/128 == 
 now number stage depends on wide transfromations
 each shuffle operation creates a stage and hence if you are using join a different stage will be created 
 
+# If you have 1 TB of data to be processed in a Spark job, and the cluster configuration consists of 5 nodes, each with 8 cores and 32 GB of RAM, how would you tune the configuration parameters for optimum performance?
+Allocating 4GB of RAM each for OS and system overhead, Spark can use 28GB per node for executor memory. 
+setting 2 executors per node allows each to use 14GB memory and 4 cores,
+10 executors with 14GB memory and 4 cores each
+1TB data with 128MB partitions gives around 7813 partitions, but I’m thinking that might be too many. I’m leaning towards 200 partitions as a practical middle ground.
+A common heuristic is 2× the total cores = parallism
+For shuffle operations, higher partitioning allows finer-grained tasks and better load balancing
+Heuristic: About 20 partitions per core → 40 × 20 = 800
+This reduces data skew and ensures that shuffle tasks are small enough to avoid memory bottlenecks
+
+//Cluster Specifications:
+Nodes = 5
+Cores per node = 8 → Total cores = 5 × 8 = 40
+RAM per node = 32 GB; Reserve ≈4 GB → Usable RAM per node = 32 − 4 = 28 GB
+
+//Executor Configuration:
+Executors per node = 2 → Total executors = 5 × 2 = 10
+Executor cores = 4
+Executor memory per executor = 28 GB / 2 = 14 GB
+
+//Driver Configuration:
+Driver memory ≈ 16 GB
+
+//Data Partitioning:
+Total data = 1 TB = 1024 GB = 1,048,576 MB
+Target partition size = 128 MB
+Number of partitions ≈ 1,048,576 / 128 ≈ 8192
+
+//Parallelism:
+spark.default.parallelism ≈ Total cores × 2 = 40 × 2 = 80
+
+//Shuffle Partitions (tunable):
+spark.sql.shuffle.partitions ≈ 800
