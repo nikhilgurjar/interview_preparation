@@ -23,7 +23,15 @@ https://medium.com/@shrutibce/diamond-problem-solution-in-scala-b9af7f54a32b
 ### What is liquid clustering?
 ### Hardest thing you faced and how did you resolved?
 
+### How to choose cluster size based on input data
+https://medium.com/analytics-vidhya/simple-method-to-choose-number-of-partitions-in-spark-75315c636a94
+default partition size = 128MB
+number of partititions = input_data/128MB
+number of cores == number of partitions or number of partitons = multiple of number of cores
+
+
 ### Sparksession vs sparkcontext vs hivecontext vs sqlcontext?
+Sparksession .builder() is a design pattern which gives us interface to access sparkcontext, hivecontext, sqlcontext via single entry point
 https://medium.com/@rganesh0203/sparkcontext-vs-othercontexts-98e54895197e
 <code>
    SparkSession.builder().appName("test_app").master("local").config("spark.sql.warehouse.dir", "C:/users/nikhil/spark").enableHiveSupport().getOrCreate()
@@ -247,3 +255,14 @@ https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc
 ### How can you identify and resolve memory bottlenecks in a PySpark
 application?
 https://medium.com/@saipavanguduri10/ways-to-detect-bottlenecks-in-spark-code-3129c8ce1dac
+
+### A shuffle spill occurs when a Spark task can't process the data in memory, causing it to write data temporarily to disk. If the shuffle spill is too high (e.g., 50-60 GB), it overwhelms Spark's memory, leading to slow performance and potential crashes. This results in excessive disk I/O, which can significantly degrade performance, especially when working with Delta Lake.
+Solutions to Spill issues
+1. Increase Memory Allocation
+2. Partitioning and Bucketing
+3. Adaptive Query Engine (AQE)
+4. Broadcast Join Tuning
+5. Reduce Data Collection to Driver
+https://selectfrom.dev/spark-performance-tuning-spill-7318363e18cb
+https://medium.com/@biswas.upasana/spark-performance-tuning-spill-838c357ac935
+
