@@ -63,3 +63,12 @@
 3. Use dynamic configurations rather than dynamic which can be changed from outside
 4. Use proper partitioning and caching strategies, filter data early, avoid actions or shuffle operations
 5. for fault tolerance keep checkpoint of each step and devide task into multiple small steps
+
+# Lets say you are getting your data volume is 100 GB , In your spark you are doing 5 Actions and 3 transformations on the data, explain what goes behind the scene with respect to Stages ,tasks?
+5 actions means 5 different jobs 
+inside 5 jobs there are stages and inside that there are tasks 
+
+lets come to tasks first, that depends on number of partitions, 100*1024/128 == 800 around  hence 800 tasks in each stage 
+now number stage depends on wide transfromations
+each shuffle operation creates a stage and hence if you are using join a different stage will be created 
+
