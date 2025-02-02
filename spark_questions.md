@@ -266,3 +266,5 @@ Solutions to Spill issues
 https://selectfrom.dev/spark-performance-tuning-spill-7318363e18cb
 https://medium.com/@biswas.upasana/spark-performance-tuning-spill-838c357ac935
 
+### slowly changing dimensions
+https://medium.com/analytics-vidhya/slowly-changing-dimension-346270b22d0f
