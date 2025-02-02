@@ -26,3 +26,16 @@ https://www.linkedin.com/pulse/understanding-rows-between-clause-sql-rahma-hassa
 ### sql query to find all tables which has a particular column in it
 ### explain sql normalization, its forms from 1 to 5 and how to violet each 
 # write query to convert string to int data type
+# Write a query to generate a time-series report for sales data, filling in missing dates with zero sales.
+# Create a query to find all the products that were never purchased together in the same transaction.
+# Implement a query to calculate the total time spent by each user on the platform, excluding overlapping time intervals.
+# Write a query to segment customers into cohorts based on their first purchase date and calculate retention rates for each cohort.
+# Identify the products that have been sold for 3 consecutive months but not for the 4th month.
+# Calculate the median salary for employees grouped by department.
+# Write a query to delete duplicate rows but keep the row with the earliest timestamp.
+# Calculate the rolling retention rate for an app based on daily user activity.
+# Identify the longest streak of consecutive days a customer has made a purchase
+# Write a query to compare the sales of the same product across two different time periods.
+# Find the top 3 customers who contributed the most to revenue in the last year.
+# Write a query to find customers who have made purchases in every quarter of the year.
+# 
