@@ -41,3 +41,7 @@
 - **Too many small partitions → Burden on query planner & metadata management.**
 - Strive for an optimal balance between performance and manageability.
 
+
+# A critical PySpark job failed in production due to an out-of-memory error. How would you debug and fix the issue?
+
+
