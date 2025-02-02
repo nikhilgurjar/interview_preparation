@@ -244,3 +244,6 @@ https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc
 17) Consider a job is running very slow in Azure Databricks. How would you approach the issue and make it faster?
 18) What are the optimization techniques you have worked on? Explain them in brief.
 19) How would you optimize the job with respect to memory management in azure databricks?
+### How can you identify and resolve memory bottlenecks in a PySpark
+application?
+https://medium.com/@saipavanguduri10/ways-to-detect-bottlenecks-in-spark-code-3129c8ce1dac
