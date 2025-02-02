@@ -105,3 +105,18 @@ spark.default.parallelism ≈ Total cores × 2 = 40 × 2 = 80
 
 //Shuffle Partitions (tunable):
 spark.sql.shuffle.partitions ≈ 800
+
+Assign a minimum of 4*partition size memory for each core
+hence memory for executor = core memory * number of cores
+
+# interesting case
+Spark has a property spark.sql.files.openCostInBytes which is by default 4 Mb. This property tells that cost incurs when opening a file in spark i.e. overhead
+
+In our case file size is 2 Mb and cost incurs or overhead for this is 4MB ,so for processing a single file we need 6 MB
+
+Default partition size is 128MB
+
+21 files * 6 MB= 128 Mb,so it combines 21 files into single partition.
+
+500 files/21=23 to 24 partitions will be created
+https://medium.com/@kohaleavin/spark-beyond-basics-required-spark-memory-to-process-100gb-file-87742dea9134
