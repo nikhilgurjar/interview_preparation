@@ -278,3 +278,16 @@ https://medium.com/@biswas.upasana/spark-performance-tuning-spill-838c357ac935
 
 ### slowly changing dimensions
 https://medium.com/analytics-vidhya/slowly-changing-dimension-346270b22d0f
+
+### dynamic partitioning
+Question: Explain how you would use dynamic partitioning to load data into a partitioned table without specifying the partition values explicitly.
+
+Answer: Dynamic partitioning allows you to load data into a partitioned table without specifying partition values explicitly. You need to enable dynamic partitioning and set the number of dynamic partitions allowed. For example:
+
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode = nonstrict;
+
+INSERT INTO TABLE sales PARTITION (region)
+SELECT sale_id, product_id, sale_amount, region
+FROM staging_sales;
+This approach dynamically creates partitions based on the region column values in the staging_sales table.
