@@ -32,12 +32,12 @@ number of partititions = input_data/128MB
 number of cores == number of partitions or number of partitons = multiple of number of cores
 
 # classify worker, node, executor, driver and cores
-Node: A physical machine in your cluster.
-Worker: The process running on a node that hosts one or more executors. In Spark, each node is a worker.
-Executor: A JVM process launched on a worker that executes tasks. Executors are allocated a specific number of cores and a portion of the node’s memory.
-Driver: The central coordinator that converts your application code into tasks
-one node (worker) with 8 cores can run multiple executors. Running more than one executor per node can improve performance by reducing GC overhead, as smaller executors have shorter garbage collection pauses compared to one large executor.
-Typically, 10–20% of a node’s total RAM is reserved for the OS and system processes. For a 32 GB node, allocating around 4 GB (≈12.5%) is a common starting point. 
+- Node: A physical machine in your cluster.
+- Worker: The process running on a node that hosts one or more executors. In Spark, each node is a worker.
+- Executor: A JVM process launched on a worker that executes tasks. Executors are allocated a specific number of cores and a portion of the node’s memory.
+- Driver: The central coordinator that converts your application code into tasks
+- one node (worker) with 8 cores can run multiple executors. Running more than one executor per node can improve performance by reducing GC overhead, as smaller - - executors have shorter garbage collection pauses compared to one large executor.
+- Typically, 10–20% of a node’s total RAM is reserved for the OS and system processes. For a 32 GB node, allocating around 4 GB (≈12.5%) is a common starting point. 
 
 
 ### Sparksession vs sparkcontext vs hivecontext vs sqlcontext?
