@@ -228,8 +228,14 @@ need video
 
 Q -> bucketing vs partioning 
 https://medium.com/@ashwin_kumar_/spark-partitioning-vs-bucketing-partitionby-vs-bucketby-09c98c5b40eb
-Q -> what is liquid clustering
+-----------------------------------------------
+
+### what is liquid clustering
 Liquid Clustering ( abbreviated as LC in this article) automatically adjusts the data layout based on clustering keys. In contrast to a fixed data layout as in Hive-style partitioning, the flexible (“liquid”) layout dynamically adjusts to changing query patterns, addressing the problem of suboptimal partitioning, column cardinality, etc. Clustering columns can be changed without rewriting the data.
+
+Liquid clustering is incremental, meaning that data is only rewritten as necessary to accommodate data that needs to be clustered. Data files with clustering keys that do not match data to be clustered are not rewritten.
+
+-----------------------------------------------
 
 Q -> How would you design a data pipeline to process 1 TB of data daily in real-time? 
 Q -> 
@@ -241,12 +247,12 @@ https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc
 
 ### If Spark can spill the data to disk, why would it fail with the OOM – out-of-memory exception?
 ### Spark serialization and deserialization
-   we do transformations and actions on rdd and datasets
-   Now transformations are naroow and wide
-   in wide transformation there is shuffling between partitions and hence between nodes
-   and it can't be trasferred without serialization as internally everything is JVM objects
-   serialization is process of converting java object to stream of bytes to transfer over network
-   type of serialization 
+   - we do transformations and actions on rdd and datasets
+   - Now transformations are naroow and wide
+   - in wide transformation there is shuffling between partitions and hence between nodes
+   - and it can't be trasferred without serialization as internally everything is JVM objects
+   - serialization is process of converting java object to stream of bytes to transfer over network
+   - type of serialization 
 - java serialization - default 
 - kyro serialization - 10x faster than java serializer and is more performant however do not support for all types
 
