@@ -297,3 +297,10 @@ INSERT INTO TABLE sales PARTITION (region)
 SELECT sale_id, product_id, sale_amount, region
 FROM staging_sales;
 This approach dynamically creates partitions based on the region column values in the staging_sales table.
+
+
+------------------------
+### Clustering
+- clustering means data is sorted instead partititions with that key
+- Clustering is different than order by since order by sorts on whole select, while cluster by sorts on partition making select query more faster
+- 
