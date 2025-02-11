@@ -9,6 +9,33 @@ https://www.linkedin.com/posts/seikhsariful_adf-activity-7278713400321323009-5Uk
 <code>df.select(*select_list, *[col(columnName).alias(aliasName) for columnName, aliasName in alias_dictonary.items()]) </code>
 
 ### Pivot and unpivot dataframes
+1. pivot
+   <code>SELECT
+  superhero_alias,
+  MAX(CASE WHEN platform = 'Instagram' THEN engagement_rate END) AS instagram_engagement_rate,
+  MAX(CASE WHEN platform = 'Twitter' THEN engagement_rate END) AS twitter_engagement_rate,
+  MAX(CASE WHEN platform = 'TikTok' THEN engagement_rate END) AS tiktok_engagement_rate,
+  MAX(CASE WHEN platform = 'YouTube' THEN engagement_rate END) AS youtube_engagement_rate
+FROM marvel_avengers
+WHERE superhero_alias IN ('Iron Man', 'Captain America', 'Black Widow', 'Thor')
+GROUP BY superhero_alias
+ORDER BY superhero_alias
+</code>
+2. unpivot
+   <code>
+SELECT
+  superhero_alias,
+  platform,
+  CASE platform
+    WHEN 'Instagram' THEN engagement_rate
+    WHEN 'Twitter' THEN engagement_rate
+    WHEN 'YouTube' THEN engagement_rate
+    WHEN 'TikTok' THEN engagement_rate
+  END AS engagement_rate
+FROM marvel_avengers
+WHERE superhero_alias IN ('Iron Man', 'Captain America', 'Black Widow', 'Thor')
+ORDER BY superhero_alias;
+</code>
 ### Pivot dataframes with multiple values for aggregator column
 ### Check the Count of Null values in each column
 ### Final duplicate emails in a table named person with id, email, name -> select count(*), email from test group by email having count(*) > 1
