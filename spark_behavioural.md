@@ -68,9 +68,9 @@
 5 actions means 5 different jobs 
 inside 5 jobs there are stages and inside that there are tasks 
 
-lets come to tasks first, that depends on number of partitions, 100*1024/128 == 800 around  hence 800 tasks in each stage 
-now number stage depends on wide transfromations
-each shuffle operation creates a stage and hence if you are using join a different stage will be created 
+- lets come to tasks first, that depends on number of partitions, 100*1024/128 == 800 around  hence 800 tasks in each stage 
+- now number stage depends on wide transfromations
+- each shuffle operation creates a stage and hence if you are using join a different stage will be created 
 
 # If you have 1 TB of data to be processed in a Spark job, and the cluster configuration consists of 5 nodes, each with 8 cores and 32 GB of RAM, how would you tune the configuration parameters for optimum performance?
 Allocating 4GB of RAM each for OS and system overhead, Spark can use 28GB per node for executor memory. 
@@ -110,13 +110,10 @@ Assign a minimum of 4*partition size memory for each core
 hence memory for executor = core memory * number of cores
 
 # interesting case
-Spark has a property spark.sql.files.openCostInBytes which is by default 4 Mb. This property tells that cost incurs when opening a file in spark i.e. overhead
+- Spark has a property spark.sql.files.openCostInBytes which is by default 4 Mb. This property tells that cost incurs when opening a file in spark i.e. overhead
+- In our case file size is 2 Mb and cost incurs or overhead for this is 4MB ,so for processing a single file we need 6 MB
 
-In our case file size is 2 Mb and cost incurs or overhead for this is 4MB ,so for processing a single file we need 6 MB
-
-Default partition size is 128MB
-
-21 files * 6 MB= 128 Mb,so it combines 21 files into single partition.
-
-500 files/21=23 to 24 partitions will be created
-https://medium.com/@kohaleavin/spark-beyond-basics-required-spark-memory-to-process-100gb-file-87742dea9134
+- Default partition size is 128MB
+- 21 files * 6 MB= 128 Mb,so it combines 21 files into single partition.
+- 500 files/21=23 to 24 partitions will be created
+**https://medium.com/@kohaleavin/spark-beyond-basics-required-spark-memory-to-process-100gb-file-87742dea9134**
