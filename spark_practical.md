@@ -4,14 +4,17 @@ https://www.linkedin.com/posts/seikhsariful_adf-activity-7278713400321323009-5Uk
 2. How to handle multi delimiters
    way1 -> explod(split(df.marks, "\\|"))
    way2 -> use withcolumns
-3. Avoid withcolumn chaining
-4. Pivot and unpivot dataframes
-5. Pivot dataframes with multiple values for aggregator column
-6. Check the Count of Null values in each column
-7. Final duplicate emails in a table named person with id, email, name -> select count(*), email from test group by email having count(*) > 1
-8. get all customers who ordered everuthing --> groupBy(col("customerId")).agg(contDistinct(col("productKey")).alias("order_product_count"))
-9. get the employees, dept id with maximum and minimum salary in each department
-10. get all dataframes associated with this spark session or notebook and display them --> use global method 
+
+### Avoid withcolumn chaining
+<code>df.select(*select_list, *[col(columnName).alias(aliasName) for columnName, aliasName in alias_dictonary.items()]) </code>
+
+### Pivot and unpivot dataframes
+### Pivot dataframes with multiple values for aggregator column
+### Check the Count of Null values in each column
+### Final duplicate emails in a table named person with id, email, name -> select count(*), email from test group by email having count(*) > 1
+9. get all customers who ordered everuthing --> groupBy(col("customerId")).agg(contDistinct(col("productKey")).alias("order_product_count"))
+10. get the employees, dept id with maximum and minimum salary in each department
+11. get all dataframes associated with this spark session or notebook and display them --> use global method 
     for k, v in globals().items():
              if(type(v)==Dataframe):
                    print(k)
