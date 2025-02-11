@@ -259,12 +259,34 @@ https://medium.com/@tsiciliani/liquid-clustering-with-databricks-delta-lake-57dc
 
   9) How do you connect ADLS Gen 2 with databricks? In where we mention the role assignments?
 10) If you are using Service Principal to connect with ADLS from Azure Databricks explain the steps and how would you code it?
-11) Why using service principal? How would you create it?
+-----------------------------------------------------
+
+### Why using service principal? How would you create it?
+Using a Service Principal to connect to Azure Data Lake Storage (ADLS) from Azure Databricks offers several advantages:
+- Enhanced Security: Service Principals provide a secure way to authenticate and authorize access to resources without using user credentials. This reduces the risk of credential exposure.
+- Granular Access Control: You can assign specific roles and permissions to the Service Principal, ensuring it has only the necessary access to perform its tasks. This follows the principle of least privilege.
+- Automated and Scalable: Service Principals are ideal for automated workflows and applications, as they don't require interactive login. This makes them suitable for scalable and repeatable processes.
+- Centralized Management: Credentials and secrets for the Service Principal can be stored and managed centrally in Azure Key Vault, simplifying credential management and rotation.
+- Compliance and Auditing: Using Service Principals helps in maintaining compliance with organizational policies and provides better auditing capabilities, as actions performed by the Service Principal can be tracked.
+
+--------------------------------
 12) What is Databricks runtime? Why we need it?
 13) What are Workflows?
 14) Explain about the Medallion Architecture in brief.
 15) Explain about Delta file format briefly.
-16) Consider you are working in Facebook. User is writing data for each record. Since each record is been written, a new json transaction log will get created for each write. But we can use Datalake only right. Why do we require delta file format? It can decrease the performance every now and then right?
+--------------------------
+### Consider you are working in Facebook. User is writing data for each record. Since each record is been written, a new json transaction log will get created for each write. But we can use Datalake only right. Why do we require delta file format? It can decrease the performance every now and then right?
+- Acid transactions-This is crucial for applications where data consistency is paramount
+- Scalable Metadata Handling
+- schema evolution and handling
+- time travel
+- efficient data updates
+How to optimize
+- Batching Writes: Grouping multiple records into a single transaction can reduce the number of transaction logs created, improving performance1.
+- Optimize Command: Delta Lake provides an OPTIMIZE command that compacts small files into larger ones, improving read performance2.
+- Z-Ordering: This technique helps in organizing data to improve query performance by co-locating related data2.
+
+------------------------------
 17) Consider a job is running very slow in Azure Databricks. How would you approach the issue and make it faster?
 18) What are the optimization techniques you have worked on? Explain them in brief.
 19) How would you optimize the job with respect to memory management in azure databricks?
