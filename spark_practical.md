@@ -7,6 +7,10 @@ https://www.linkedin.com/posts/seikhsariful_adf-activity-7278713400321323009-5Uk
 
 ### Avoid withcolumn chaining
 <code>df.select(*select_list, *[col(columnName).alias(aliasName) for columnName, aliasName in alias_dictonary.items()]) </code>
+<code>df_selected = df.select(
+    "*",  # Select all existing columns
+    *[lit(value).alias(column) for column, value in new_columns.items()]
+) </code>
 
 ### Pivot and unpivot dataframes
 1. pivot
