@@ -319,7 +319,24 @@ INSERT INTO TABLE sales PARTITION (region)
 SELECT sale_id, product_id, sale_amount, region
 FROM staging_sales;
 This approach dynamically creates partitions based on the region column values in the staging_sales table.
+Understanding “Dynamic Partitioning” in Spark .partitionBy(...)
+1️⃣ What .partitionBy(...) actually does
+df.write.partitionBy("year", "month").parquet("/data/sales")
 
+
+We told Spark which columns to use as partitions. ✅
+
+But we did NOT specify the actual values of those partitions. ❌
+
+The actual partition values come from the data itself:
+
+Row 1: year=2025, month=1 → folder /year=2025/month=1/
+Row 2: year=2025, month=2 → folder /year=2025/month=2/
+
+
+Spark automatically creates these folders at write time.
+
+That’s why it’s dynamic — we didn’t hardcode /year=2025/month=1/ etc.
 
 ------------------------
 ### Clustering
