@@ -126,3 +126,8 @@ What is the Catalyst optimizer, and explain its phases?
  Explain memory management in Spark?
 You have 1B rows across multiple partitions — how do you optimize a skewed join in PySpark?
  Design a reusable PySpark framework for handling missing/null values dynamically across 200+ fields.  
+Your Spark job is consuming excessive memory — how do you tune and debug it?
+ A critical ETL fails mid-run — what’s your rollback and recovery approach?
+ How do you optimize joins when working with hundreds of GBs of transaction logs?
+ Describe your approach to implementing SCD Type 2 for regulatory audit tracking.
+ What’s your approach to designing partitioning and bucketing for high-throughput queries?
