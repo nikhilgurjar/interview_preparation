@@ -38,4 +38,10 @@ https://www.linkedin.com/pulse/understanding-rows-between-clause-sql-rahma-hassa
 # Write a query to compare the sales of the same product across two different time periods.
 # Find the top 3 customers who contributed the most to revenue in the last year.
 # Write a query to find customers who have made purchases in every quarter of the year.
-# 
+#
+ 6. You have account number, transaction amount, and date columns. Write a PySpark/SQL code to find the account that occurred the most in each month.
+ 7. You have employee names and years. Find employees who participated for 3 or more distinct years.
+ 8. Can we use window functions here instead of groupBy? Why or why not?
+ 9. Can you use lag function to check for consecutive years?
+ 10. Write an SQL query using window functions to find the most recent designation of each employee.
+ 11. 
