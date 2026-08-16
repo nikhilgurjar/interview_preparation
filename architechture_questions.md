@@ -69,4 +69,24 @@ its called snowflake schema
 - semi additive means you can only sum acorss some dimensions like account balance, can sum alongs accounts but not along time
 - non additive means gross percentage revenue, can't sum as you don't know what is base value and hence it is told to not use percentage and all that info in facts. 
 
-  
+
+1. How would you implement Slowly Changing Dimensions (SCD Type 2 vs Type 3)? Explain the differences and when to use each.
+2. Describe the differences between transient tables and temporary tables in data warehousing.
+3. Explain how you'd model a “swipe payment” API in a relational schema.
+4. What’s the difference between Change Data Capture (CDC) and Change Data Tracking (CDT)?
+5. Compare data lake storage vs blob storage. When would you use one over the other?
+6. Walk me through how you'd design an end-to-end ETL pipeline from an on-premise database to Azure Databricks.
+7. Design an optimal schema to store event logs (like clicks/swipes) for high-velocity web traffic.
+8. Given messy sales data, walk us through cleaning, transformation, and how you'd design reporting tables for business analytics.
+9.  Kafka: Backpressure, design challenges
+- Database internals: Indexing, partitioning, connection pooling
+- - Follow-up: Design a streaming system end-to-end
+  - You need to join two large datasets, but the join operation is causing out-of-memory errors. What strategies would you use to optimize this join?
+  -  Describe how you would design and implement an ETL pipeline in PySpark to extract data from an RDBMS, transform it, and load it into a data warehouse.
+  -  Explain the architecture of Databricks clusters. How would you optimize cluster configurations for large-scale ETL jobs?
+   . Describe the internal mechanisms of Delta Lake’s transaction log. How does Delta Lake ensure ACID compliance in a distributed environment?
+. Discuss advanced techniques for optimizing Spark jobs in Databricks. Include details on job scheduling, partitioning strategies, and performance tuning
+Explain how to implement fine-grained access control in Databricks using Azure Active Directory or AWS IAM roles.
+ Describe how you would integrate Databricks with an external data warehouse like Snowflake or BigQuery. What are the challenges and best practices?
+ How would you design a system to dynamically scale Databricks clusters based on workload demands? Discuss the use of auto-scaling and job prioritization.
+ . Explain the process of sharing data and notebooks across different Databricks workspaces. What are the security implications, and how would you mitigate risks?
