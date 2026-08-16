@@ -44,4 +44,5 @@ https://www.linkedin.com/pulse/understanding-rows-between-clause-sql-rahma-hassa
  8. Can we use window functions here instead of groupBy? Why or why not?
  9. Can you use lag function to check for consecutive years?
  10. Write an SQL query using window functions to find the most recent designation of each employee.
- 11. 
+ 11. Write a query to find users with 2+ purchases within 24 hours.
+ 12. 
