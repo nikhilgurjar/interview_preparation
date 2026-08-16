@@ -90,3 +90,20 @@ Explain how to implement fine-grained access control in Databricks using Azure A
  Describe how you would integrate Databricks with an external data warehouse like Snowflake or BigQuery. What are the challenges and best practices?
  How would you design a system to dynamically scale Databricks clusters based on workload demands? Discuss the use of auto-scaling and job prioritization.
  . Explain the process of sharing data and notebooks across different Databricks workspaces. What are the security implications, and how would you mitigate risks?
+What's the best strategy to handle schema evolution when reading streaming Delta tables?
+How would you implement a time-travel audit system using Delta Lake versioning?
+ Given 100 TB of zipped JSON files, how do you read, flatten, transform, and write efficiently in Databricks?
+Design a hybrid pipeline to process 20M events/day (real-time + batch).
+How would you optimize costs while maintaining SLA on a cluster that runs 24x7?
+ How to maintain exactly-once guarantees in Spark Streaming or Kafka Streams?
+ How to manage schema evolution when Kafka pushes new fields downstream?
+AWS vs GCP → which services fit best for scalable data ingestion & analytics?
+Design a global system to track millions of domain registrations in real time.
+ Build a data lake for analytics with high availability → what formats & layers?
+Create a recommendation engine for domain renewals like data flow & model serving plan.
+How would you design a data platform for real-time trade processing across multiple regions?
+Design a data model for multi-currency transactions and exchange rate adjustments.
+ You’re asked to mask sensitive data before sending to analytics teams — how would you implement it?
+A data ingestion job is lagging behind in Kafka — what steps would you take to fix it?
+How do you plan a zero-downtime migration for a petabyte-scale warehouse?
+ Compare Parquet vs Avro — explain use cases and performance trade-offs.
