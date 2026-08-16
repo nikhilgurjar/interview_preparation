@@ -117,3 +117,12 @@ hence memory for executor = core memory * number of cores
 - 21 files * 6 MB= 128 Mb,so it combines 21 files into single partition.
 - 500 files/21=23 to 24 partitions will be created
 **https://medium.com/@kohaleavin/spark-beyond-basics-required-spark-memory-to-process-100gb-file-87742dea9134**
+
+----------
+If you encounter an Out Of Memory (OOM) exception when joining two large datasets, what steps would you take to resolve this issue?
+Have you worked on Spark optimization in your current project? Explain the issue you faced and how you resolved it.
+If you have 100 GB of data, how would you choose the cluster configuration?
+What is the Catalyst optimizer, and explain its phases?
+ Explain memory management in Spark?
+You have 1B rows across multiple partitions — how do you optimize a skewed join in PySpark?
+ Design a reusable PySpark framework for handling missing/null values dynamically across 200+ fields.  
